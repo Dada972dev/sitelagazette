@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Création Vidéo - Gazette</title>
+</head>
+<body class="creavideo-background">
+    <header>
+        <img src="../images/logo.png" alt="Logo de la Gazette" id="logo">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../about.html">Notre équipe</a></li>
+                <li><a href="../articles.html">Les articles</a></li>
+                <li><a href="../videos.html">Les Vidéos</a></li>
+                <li><a href="../discord.html">Discord</a></li>
+                <li><a href="../shop.html">Boutique</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content-wrapper">
+            <h1>Création Vidéo</h1>
+            <p>Découvrez nos offres pour la création de vidéos.</p>
+            <h2>Nos offres:</h2>
+            <section id="offer-list">
+                <div class="offer-item" onclick="openModal('boxvideo.png')">
+                    <img src="../boutique/image/boxvideo.png" alt="Box Vidéo">
+                </div>
+                <div class="offer-item" onclick="openModal('jetski.png')">
+                    <img src="../boutique/image/jetski.png" alt="Jet Ski">
+                </div>
+                <div class="offer-item" onclick="openModal('pirate.png')">
+                    <img src="../boutique/image/pirate.png" alt="Pirate">
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 La Gazette. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-left">
+                <img id="modal-image" src="" alt="Offer Image">
+            </div>
+            <div class="modal-right">
+                <h2>Commander sur Discord</h2>
+                <button class="discord-button" onclick="redirectToDiscord()">
+                    <img src="../images/discord.png" alt="Discord Logo">
+                    Discord
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modal-image').src = `../boutique/image/${imageSrc}`;
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function redirectToDiscord() {
+            window.location.href = 'https://discord.com/invite/8VdAAsadhb';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) {
+                document.getElementById('modal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
